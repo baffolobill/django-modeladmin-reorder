@@ -7,7 +7,10 @@ from copy import deepcopy
 from django.conf import settings
 from django.contrib import admin
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.six import string_types
+try:
+    from django.utils.six import string_types
+except ImportError:
+    from six import string_types
 
 try:
     from django.urls import resolve, Resolver404
